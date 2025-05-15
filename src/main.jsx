@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from './components/MainLayout.jsx'
 import Phones from './components/Phones.jsx'
+import SinglePhone from './components/SinglePhone.jsx'
 const router = createBrowserRouter([
 {
   path:'/',
@@ -13,6 +14,12 @@ const router = createBrowserRouter([
     {
       path:"/phones",
       Component:Phones,
+      loader:()=> fetch("http://localhost:5000/phones"),
+    },
+    {
+      path:'/phone/:id',
+      Component:SinglePhone,
+      loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`),
     }
   ]
 }
