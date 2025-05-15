@@ -7,10 +7,12 @@ const SinglePhone = () => {
      
     return (
         <div>
-            <h2>{phone.name}</h2>
-            <h4>Brand : {phone.brand}</h4>
+            <h2> Name = {phone.name}</h2>
+            <h4>Brand = {phone.brand}</h4>
             <img src={phone.img} alt={name} />
-            <p> camera: {phone.camera}</p>
+            <p> camera = {phone.camera}</p>
+            <p>screenSize = {phone.screenSize}</p>
+            <p>os = {phone.os}</p>
 
         </div>
     );
